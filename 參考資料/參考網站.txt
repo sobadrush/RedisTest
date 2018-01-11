@@ -1,0 +1,7 @@
+https://webcache.googleusercontent.com/search?q=cache:uUhv0CLoqFwJ:https://blog.techbridge.cc/2016/06/18/redis-introduction/+&cd=2&hl=zh-TW&ct=clnk&gl=tw
+
+http://www.runoob.com/redis/redis-java.html
+
+http://www.runoob.com/redis/redis-install.html
+
+https://dotblogs.com.tw/supershowwei/2015/12/23/124549
