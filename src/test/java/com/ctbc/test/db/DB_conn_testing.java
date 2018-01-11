@@ -40,6 +40,9 @@ public class DB_conn_testing {
 		try {
 			Class.forName(DRIVER_NAME);
 			Connection conn = DriverManager.getConnection(CONNECTION_URL);
+			
+			System.err.println(" DB NAME >>> " + conn.getMetaData().getDatabaseProductName());
+			
 		 	PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM URL_SURL_MAPPING");
 		 	ResultSet rs = pstmt.executeQuery();
 		 	while (rs.next()) {
