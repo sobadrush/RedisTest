@@ -43,7 +43,7 @@ public class DB_conn_testing {
 			
 			System.err.println(" DB NAME >>> " + conn.getMetaData().getDatabaseProductName());
 			
-		 	PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM URL_SURL_MAPPING");
+		 	PreparedStatement pstmt = conn.prepareStatement("SELECT id , short_URL , real_URL FROM URL_SURL_MAPPING");
 		 	ResultSet rs = pstmt.executeQuery();
 		 	while (rs.next()) {
 				System.out.println(rs.getString(1) + "  ,  " + rs.getString(2) +  "  ,  " + rs.getString(3));
