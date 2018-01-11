@@ -14,6 +14,12 @@ public class UrlMappingVO implements Serializable {
 		super();
 	}
 
+	public UrlMappingVO(String shortUrl, String realUrl) {
+		super();
+		this.shortUrl = shortUrl;
+		this.realUrl = realUrl;
+	}
+	
 	public UrlMappingVO(Integer id, String shortUrl, String realUrl) {
 		super();
 		this.id = id;
