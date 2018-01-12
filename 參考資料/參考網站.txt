@@ -1,7 +1,15 @@
+【TechBridge 技術共筆部落格】
 https://webcache.googleusercontent.com/search?q=cache:uUhv0CLoqFwJ:https://blog.techbridge.cc/2016/06/18/redis-introduction/+&cd=2&hl=zh-TW&ct=clnk&gl=tw
 
+【Java 使用 Redis】
 http://www.runoob.com/redis/redis-java.html
 
+【Redis 安装】
 http://www.runoob.com/redis/redis-install.html
-
 https://dotblogs.com.tw/supershowwei/2015/12/23/124549
+
+【清空所有緩存】
+http://www.runoob.com/redis/server-flushall.html
+
+【Expire】範例：redis> SETEX mykey 10 "Hello" (設定myKey在緩存區的時間為10秒)
+https://redis.io/commands/setex

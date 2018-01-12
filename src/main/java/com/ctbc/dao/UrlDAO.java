@@ -19,6 +19,8 @@ public class UrlDAO {
 	private static final String GET_ALL_STMT = " SELECT * FROM URL_SURL_MAPPING ";
 	private static final String INSERT_INTO_STMT = " INSERT INTO URL_SURL_MAPPING( short_URL , real_URL ) VALUES ( ? , ? ) ";
 	private static final String SELECT_COUNT_LONG_URL = " SELECT COUNT(1) AS cc FROM URL_SURL_MAPPING WHERE real_url = ? ";
+	private static final String GET_SHORT_URL = " SELECT * FROM URL_SURL_MAPPING WHERE real_url = ? ";
+	
 	
 	static {
 		try {
@@ -40,6 +42,7 @@ public class UrlDAO {
 			while (rs.next()) {
 				pen = rs.getInt("cc");
 			}
+			rs.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -93,5 +96,37 @@ public class UrlDAO {
 		}
 
 		return urlList;
+	}
+	
+	public UrlMappingVO getShortUrl(String longUrl) {
+		UrlMappingVO vo = null;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			conn = DriverManager.getConnection(CONNECTION_URL);
+			pstmt = conn.prepareStatement(GET_SHORT_URL);
+			pstmt.setString(1, longUrl);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				// System.out.println(rs.getString(1) + "  ,  " + rs.getString(2) +  "  ,  " + rs.getString(3));
+				vo = new UrlMappingVO();
+				vo.setId(rs.getInt("id"));
+				vo.setShortUrl(rs.getString("short_URL"));
+				vo.setRealUrl(rs.getString("real_URL"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				rs.close();
+				pstmt.close();
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return vo;
 	}
 }
