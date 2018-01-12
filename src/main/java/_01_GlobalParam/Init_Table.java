@@ -70,6 +70,12 @@ public class Init_Table {
 		jedis.close();
 	}
 	
+	public static void releaseConnection() throws SQLException {
+		pstmt.close();
+		conn.close();
+		System.out.println("======= Release Connection ======");
+	}
+	
 	public static void main(String[] args) throws SQLException {
 		dropTable();
 		createTable();
@@ -77,6 +83,7 @@ public class Init_Table {
 		System.out.println("======= 初始化TABLE完成 ======");
 		initRedis();
 		System.out.println("======= 初始化Redis完成 ======");
+		releaseConnection();
 	}
 
 }
