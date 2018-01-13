@@ -10,11 +10,13 @@ import java.util.List;
 
 import com.ctbc.vo.UrlMappingVO;
 
+import _01_GlobalParam.GlobalParam;
+
 public class UrlDAO {
 	private static final String DRIVER_NAME = "org.sqlite.JDBC";
 //	private static final String PROJECT_PATH = System.getProperty("user.dir");
 //	private static final String CONNECTION_URL = "jdbc:sqlite:" + PROJECT_PATH + "/mySqliteDB.db";
-	private static final String CONNECTION_URL = "jdbc:sqlite:" + "D:/myWorkspace3/ShortURL_By_Redis" + "/mySqliteDB.db";
+	private static final String CONNECTION_URL = "jdbc:sqlite:" + GlobalParam.WORKSPACE_PROJECT_NAME + "/mySqliteDB.db";
 
 	private static final String GET_ALL_STMT = " SELECT * FROM URL_SURL_MAPPING ";
 	private static final String INSERT_INTO_STMT = " INSERT INTO URL_SURL_MAPPING( short_URL , real_URL ) VALUES ( ? , ? ) ";
