@@ -13,3 +13,7 @@ http://www.runoob.com/redis/server-flushall.html
 
 【Expire】範例：redis> SETEX mykey 10 "Hello" (設定myKey在緩存區的時間為10秒)
 https://redis.io/commands/setex
+
+【Redis Config設定】
+http://www.runoob.com/redis/redis-conf.html
+http://blog.csdn.net/ithomer/article/details/9232891
