@@ -38,7 +38,7 @@
       <script type="text/javascript">
       	$(function(){
 			<%if(request.getAttribute("errMsg") != null){%> 
-					alert( "${requestScope.errMsg}" );
+				alert( "${requestScope.errMsg}" );
 			<%}%>    
       	})
       </script>
