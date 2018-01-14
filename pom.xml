@@ -59,6 +59,14 @@
 		    <version>1.2</version>
 		</dependency>
         
+        <!-- MSSQL-JDBC -->
+		<dependency>
+		    <groupId>com.microsoft.sqlserver</groupId>
+		    <artifactId>mssql-jdbc</artifactId>
+		    <version>6.1.0.jre8</version>
+		    <!-- <scope>test</scope> -->
+		</dependency>
+        
     </dependencies>
     <build>
         <finalName>${project.artifactId}-${project.version}</finalName>
